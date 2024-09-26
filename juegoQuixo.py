@@ -5,44 +5,6 @@ mejora de la IA sería que esa jugada legal no hace que pierda la IA. La segunda
 existe una jugada con la que la IA puede ganar, que haga esa jugada.
 Aquí tienes un vídeo de como se juega.
 https://youtu.be/F2kuj1qlaKk?si=fftHkcQaM5j3L7jd
-
-
-
-
-class Quixo:
-    def __init__(self):
-        self.tablero = [[' ' for _ in range(5)] for _ in range(5)]
-
-    def mostrarTabla(self):
-        print("    0   1   2   3   4")
-        print("  --------------------- ")
-        for i, fila in enumerate(self.tablero):
-            print(f"{i} | {' | '.join(fila)} | ")
-            print("  --------------------- ")
-
-    def mover(self, fila, columna, jugador):
-        # Verificamos que el movimiento sea valido (borde del tablero)
-        if fila in [0, 4] or columna in [0, 4]: 
-            if self.tablero[fila][columna] == ' ':
-                self.tablero[fila][columna] = jugador
-            else:
-                print("Casilla ocupada")
-        else:
-            print("Movimiento no valido")
-
-    def jugarJuego(self):
-        turno = 'X'
-        while True:
-            self.mostrarTabla()
-            fila = int(input(f"Jugador {turno}, ingrese la fila (0-4): "))
-            columna = int(input(f"Jugador {turno}, ingrese la columna (0-4): "))  
-            self.mover(fila, columna, turno)
-
-            # Cambiar de turno
-            turno = 'O' if turno == 'X' else 'X'
-
-juego = Quixo()
-juego.jugarJuego()
 '''
 
 import random
